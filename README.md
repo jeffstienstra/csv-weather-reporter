@@ -1,9 +1,9 @@
 # spindance.code-challenge
-###Welcome to the SpinDance Code Challenge!
+### Welcome to the SpinDance Code Challenge!
 
 For this challenge, you will be building a virtual, connected IoT sensor that sends data readings and diagnostic data over a secure connection established with AWS IoT. Use any of the available AWS IoT SDKs for the interface to AWS IoT. (https://docs.aws.amazon.com/iot/latest/developerguide/iot-sdks.html) using any of the supported languages.
 
-##Requirements
+## Requirements
 
 1. Create an application that will connect to the AWS IoT Thing in the provided AWS Account using the provided AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY.
 1. The application shall report readings to AWS IoT on the MQTT topic `things/ConnectedSensor/readings`. 
@@ -16,12 +16,12 @@ For this challenge, you will be building a virtual, connected IoT sensor that se
 1. The application shall compute and report diagnostic data on the MQTT topic `things/ConnectedSensor/diagnostics`, including the min, max, and average values for Temperature, Location, Humidity, and Pressure for the last n readings of the application running, where n is configurable by the user.
 1. Source code shall be pushed to this repository along with instructions on how to build, test, and run in this README.
 
-##Setup:
+## Setup:
 
-###AWS Credentials
+### AWS Credentials
 1. For this project, just configure the AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY to have the provided values. Keep it simple!
 
-###Register a new Thing:
+### Register a new Thing:
 1. The following steps walk through the specific steps needed for this challenge, but feel free to also reference [this article](https://docs.aws.amazon.com/iot/latest/developerguide/register-device.html) for registering a Device in AWS IoT.
 1. Login to the AWS console with your provided credentials. You may be prompted to reset your password on login.
 1. Under the 'Services' dropdown, navigate to ‘AWS IoT Core'
@@ -76,6 +76,6 @@ For this challenge, you will be building a virtual, connected IoT sensor that se
 1. Select the policy created in the previous steps, followed by “Register Thing"
 1. That’s it! You know have a registered thing an AWS IoT, as well as the Certificates and Keys needed to make the connection.
 
-###End to End Test using AWS IoT Console
+### End to End Test using AWS IoT Console
 1. In the AWS IoT Core console, select Test in the left navigation list
 1. Input the topic to watch 'things/ConnectedSensor/readings’ or 'things/ConnectedSensor/diagnostics’, start your application and if everything is connected, you will see your data
