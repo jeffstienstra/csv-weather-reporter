@@ -6,6 +6,7 @@ For this challenge, you will be building a virtual, connected IoT sensor that se
 ## Instructions
 1. Perform the setup steps below to configure your AWS credentials and register a thing in AWS IoT
 1. Create an application per the requirements specified below using one of the any of the available [AWS IoT SDKs](https://docs.aws.amazon.com/iot/latest/developerguide/iot-sdks.html) for the interface to AWS IoT.
+1. Keep in mind we will test your application with various inputs, not just what is provided in this repository
 1. Push the source code to this repository along with instructions on how to build, test, and run the application
 
 ## Requirements
