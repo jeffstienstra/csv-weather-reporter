@@ -38,12 +38,12 @@ For this challenge, you will be building a virtual, connected IoT sensor that se
 ## Setup:
 
 ### AWS Credentials
-1. For this project, just configure the AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY to have the provided values. Keep it simple!
+1. For this project, just configure the AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY environment variables to have values provided by spindance. Keep it simple!
 
 ### Register a new Thing:
 1. The following steps walk through the specific steps needed for this challenge, but feel free to also reference [this article](https://docs.aws.amazon.com/iot/latest/developerguide/register-device.html) for registering a Device in AWS IoT.
 1. Login to the AWS console with your provided credentials. You may be prompted to reset your password on login.
-1. Under the 'Services' dropdown, navigate to ‘AWS IoT Core'
+1. Under the 'Services' dropdown, navigate to ‘AWS IoT Core'. You may need to click 'Get Started' if you don't see the left hand navigation menu.
 1. Select ‘Secure’->’Policies' from the left hand navigation menu.
 1. Select ‘Create’ and give your policy a name you will recognize
 1. Click on ‘Advanced mode’ in the ‘Add statements section, and copy the following policy into the edit view.
@@ -57,7 +57,7 @@ For this challenge, you will be building a virtual, connected IoT sensor that se
           "iot:Connect"
         ],
         "Resource": [
-          "arn:aws:iot:us-east-2:*:client/ConnectedSensor"
+          "arn:aws:iot:*:*:client/ConnectedSensor"
         ]
       },
       {
@@ -67,9 +67,9 @@ For this challenge, you will be building a virtual, connected IoT sensor that se
           "iot:Receive"
         ],
         "Resource": [
-          "arn:aws:iot:us-east-2:*:topic/$aws/things/ConnectedSensor/*",
-          "arn:aws:iot:us-east-2:*:topic/things/ConnectedSensor/readings",
-          "arn:aws:iot:us-east-2:*:topic/things/ConnectedSensor/diagnostics"
+          "arn:aws:iot:*:*:topic/$aws/things/ConnectedSensor/*",
+          "arn:aws:iot:*:*:topic/things/ConnectedSensor/readings",
+          "arn:aws:iot:*:*:topic/things/ConnectedSensor/diagnostics"
         ]
       },
       {
@@ -78,16 +78,16 @@ For this challenge, you will be building a virtual, connected IoT sensor that se
           "iot:Subscribe"
         ],
         "Resource": [
-          "arn:aws:iot:us-east-2:*:topicfilter/$aws/things/ConnectedSensor/shadow/*",
-          "arn:aws:iot:us-east-2:*:topicfilter/things/ConnectedSensor/readings",
-          "arn:aws:iot:us-east-2:*:topicfilter/things/ConnectedSensor/diagnostics"
+          "arn:aws:iot:*:*:topicfilter/$aws/things/ConnectedSensor/shadow/*",
+          "arn:aws:iot:*:*:topicfilter/things/ConnectedSensor/readings",
+          "arn:aws:iot:*:*:topicfilter/things/ConnectedSensor/diagnostics"
         ]
       }
     ]
     }
     ```
 1. Click on ‘Create’ to create the policy
-1. Navigate back to 'AWS IoT Core', and select ‘Manage’ on the left hand navigation menu, and ‘Create’ to create a new Thing
+1. Navigate back to 'AWS IoT Core', and select ‘Manage’ on the left hand navigation menu, and 'Register a thing' or ‘Create’ to create a new Thing
 1. Create a single ‘Thing’ using the name `ConnectedSensor`, and create without any need for Groups / Types / Attributes
 1. Select ‘Create certificate’ to generate a new certificate for your thing.
 1. Once generated, download the four files: the certificate, the public key, the private key, and the CA cert. Put these in a safe place, you will need them to establish the connection using the SDK.
