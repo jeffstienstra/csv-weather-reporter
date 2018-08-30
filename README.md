@@ -35,13 +35,7 @@ that contains all of the values you will need to connect to this thing using the
       "timestamp": 1535324228266,
       "temperature": 19.15,
       "humidity": 0.20,
-      "pressure": 37.11,
-      "accelorometer": 
-      { 
-        "x": 4.0, 
-        "y": -4.5, 
-        "z": 12.3
-      }
+      "pressure": 37.11
     }
     ```
 1. Accept input readings defined in CSV file similar to the example [data file](data/readings.csv).
@@ -52,6 +46,7 @@ that contains all of the values you will need to connect to this thing using the
 
     *The above example shows a few successive diagnostics reports D0-D3 generated over successive readings R0-R9*  
 
+1. Only generate diagnostics reports once enough readings have been accumulated to fill a sample size window.
 1. Compute and report diagnostic data using the MQTT topic `things/ConnectedSensor/diagnostics`
 1. Diagnostics data shall include the min, max, and average values for a sample (excluding 'accelorometer')
 1. Diagnostics data shall include the latest timestamp of the readings used in the report and also be reported in a JSON structure:
@@ -60,7 +55,7 @@ that contains all of the values you will need to connect to this thing using the
       "timestamp": 1535324228266,
       "avg-temperature": 19.15,
       "avg-humidity": 0.20,
-      "avg-pressure": 37.11,
+      "avg-pressure": 37.11
     }
    ```
 
