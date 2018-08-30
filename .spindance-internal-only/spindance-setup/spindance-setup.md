@@ -113,7 +113,7 @@ Thank you,
 1. Remove the internals directory (no real sensitive data here, but this helps with distraction)
     ```
     cd <repo root>
-    rm -r ..spindance-internal-only
+    rm -r .spindance-internal-only
     ```
 1. Commit and push the changes
     ```
