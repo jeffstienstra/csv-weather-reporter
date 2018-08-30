@@ -48,7 +48,7 @@ that contains all of the values you will need to connect to this thing using the
 
 1. Only generate diagnostics reports once enough readings have been accumulated to fill a sample size window.
 1. Compute and report diagnostic data using the MQTT topic `things/ConnectedSensor/diagnostics`
-1. Diagnostics data shall include the min, max, and average values for a sample (excluding 'accelorometer')
+1. Diagnostics data shall include the min, max, and average values for a sample
 1. Diagnostics data shall include the latest timestamp of the readings used in the report and also be reported in a JSON structure:
    ```json
    {
