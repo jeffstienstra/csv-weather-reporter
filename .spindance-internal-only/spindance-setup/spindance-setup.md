@@ -1,4 +1,4 @@
-## SpinDance Setup:
+# SpinDance Setup:
 
 ## Setup Challenger AWS Account (one time per account):
 
