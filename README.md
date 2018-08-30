@@ -19,6 +19,7 @@ detail in the following sections.
 
 ## Connecting to the AWS IoT Thing:
 1. Login to the AWS console with your provided credentials. You may be prompted to reset your password on login.
+1. Be sure you select 'US East (N. Virginia)' for the region in the upper right corner of the console
 1. Under the 'Services' dropdown, navigate to ‘AWS IoT Core'. You may need to click 'Get Started' if you don't see the left hand navigation menu.
 1. Select ‘Manage' from the left hand navigation menu, and you should see a Thing called 'ConnectedSensor'
 1. Select 'ConnectedSensor', and you will see the details of the Thing. To save time, we've included a [configuration values file](configuration-values.md)
@@ -56,7 +57,7 @@ that contains all of the values you will need to connect to this thing using the
       "avg-temperature": 19.15,
       "avg-humidity": 0.20,
       "avg-pressure": 37.11
-    }
+   }
    ```
 
 ## End to End Test using AWS IoT Console
