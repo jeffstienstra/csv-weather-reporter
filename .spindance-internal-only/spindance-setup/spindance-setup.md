@@ -101,7 +101,7 @@ Thank you,
 1. On the agreed time, copy this repository to a new repository with the candidates name appended:
     ```
     git clone git@github.com:<user>/spindance.code-challenge
-    cd myrepo-original
+    cd spindance.code-challenge
     git remote set-url origin git@github.com:<user>/spindance.code-challenge.<candidate-id>
     git push origin master
     ```
