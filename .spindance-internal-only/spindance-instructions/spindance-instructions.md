@@ -105,10 +105,12 @@ Thank you,
     git remote set-url origin git@github.com:<user>/spindance.code-challenge.<candidate-id>
     git push origin master
     ```
-1. Copy the internal files for the challenge account the candidate is using:
+1. Copy the internal files for the challenge account the candidate is using the following commands. 
+This shows an example using data specific to the 'spindance-codechallenge2' account.
     ```
     cd <repo root>
-    cp -r .spindance-internal-only/<spindance-codechallenge-account-name> .
+    rm -r certificates
+    cp -r .spindance-internal-only/spindance-codechallenge2/* .
     ```
 1. Remove the internals directory (no real sensitive data here, but this helps with distraction)
     ```
@@ -138,3 +140,9 @@ Thank you,
     Thank you,
     ```
  1. Give the candidate access via their provided github id (Have Bruce fill in details here)
+ 
+ ### Cleanup 
+ 
+ 1. The candidate copy of the repo should be kept until a hiring decision has been made. Once this 
+ is done, archive the repo by creating a zip file and storing it in S3.
+ 1. Delete the private repository for the candidate
