@@ -1,8 +1,12 @@
 # spindance.code-challenge
 ## Welcome to the SpinDance Code Challenge!
 
-For this challenge, you will be building a virtual, connected IoT sensor that sends data readings and diagnostic data
- over a secure connection established with AWS IoT. This is your private repo. This is where you will commit and push
+We have a customer that wants to gain insights from their fleet of weather sensors. These sensors currently don't have the ability
+to connect to the internet. The sensors do have the ability to log data to `.csv` files, and the customer would like us
+to build a tool to read these files, and send data readings and diagnostic data over a secure connection established with AWS IoT.
+For this challenge, you will be building this tool.
+
+This is your private repo. This is where you will commit and push
  your source code, unit tests, and instructions for how to build, test, and run your solution to this challenge. Keep
  in mind we will test your application with various inputs, not just what is provided in this repository. 
 
@@ -40,6 +44,7 @@ that contains all of the values you will need to connect to this thing using the
     }
     ```
 1. Accept input readings defined in CSV file similar to the example [data file](data/readings.csv).
+1. Provide a user configurable way to set the filename to use as input.
 1. Provide a user configurable way to set the sample size window, which specifies the number of readings included in each diagnostics report. (Ex. last 4 readings).
 1. Provide a user configurable way to set the report interval, which specifies how often the report should be generated (Ex. every 2 readings)
 
@@ -54,9 +59,15 @@ that contains all of the values you will need to connect to this thing using the
    ```json
    {
       "timestamp": 1535324228266,
-      "avg-temperature": 19.15,
-      "avg-humidity": 0.20,
-      "avg-pressure": 37.11
+      "min-temperature": 10.11,
+      "max-temperature": 19.15,
+      "avg-temperature": 25.11,
+      "min-humidity": 0.11,
+      "max-humidity": 0.20,
+      "avg-humidity": 0.72,
+      "min-pressure": 25.32,
+      "max-pressure": 37.11,
+      "avg-pressure": 121.88
    }
    ```
 

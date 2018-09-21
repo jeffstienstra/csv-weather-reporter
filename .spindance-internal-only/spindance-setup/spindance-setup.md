@@ -130,7 +130,7 @@ Thank you,
     Hi <Candidate Name> - 
     
     We are excited to kick you off on the SpinDance code challenge. 
-    You will shortly receive an email notification from github with a link to the code challenge repository.
+    You will receive an email notification shortly from github with a link to the code challenge repository.
     Read through the instructions and feel free to get started at any time. We ask that you complete your last commits
     no later than <end date time>. Please let me know if you have any access issues, or need clarifications.
     
