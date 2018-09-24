@@ -145,8 +145,8 @@ This shows an example using data specific to the 'spindance-codechallenge2' acco
  
  1. The candidate copy of the repo should be kept until a hiring decision has been made. Once this 
  is done, archive the repo by creating a zip file and storing it in a Google Drive folder: https://drive.google.com/drive/folders/10pBfVMUwhgBv0QnDUAP_0olXyewEEx8M.
-   1. Clone the repo: `git clone git@github.com:spindance/spindance.code-challenge.<candidate_id>.git`
-   1. Change directory to the repo root.
-   1. Archive to tar.gz archive: `git archive HEAD | gzip > /tmp/spindace.code-challenge.<candidate_id>.tar.gz`
-   1. Upload to the shared folder
+    1. Clone the repo: `git clone git@github.com:spindance/spindance.code-challenge.<candidate_id>.git`
+    1. Change directory to the repo root.
+    1. Archive to tar.gz archive: `git archive HEAD | gzip > /tmp/spindace.code-challenge.<candidate_id>.tar.gz`
+    1. Upload to the shared folder
  1. Delete the private repository for the candidate
