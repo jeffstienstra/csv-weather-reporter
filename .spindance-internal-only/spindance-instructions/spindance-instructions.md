@@ -11,41 +11,39 @@
 1. Click on ‘Advanced mode’ in the ‘Add statements section, and copy the following policy into the edit view.
     ```json
     {
-    "Version": "2012-10-17",
-    "Statement": [
-      {
-        "Effect": "Allow",
-        "Action": [
-          "iot:Connect"
-        ],
-        "Resource": [
-          "arn:aws:iot:us-east-2:*:client/ConnectedSensor"
-        ]
-      },
-      {
-        "Effect": "Allow",
-        "Action": [
-          "iot:Publish",
-          "iot:Receive"
-        ],
-        "Resource": [
-          "arn:aws:iot:us-east-2:*:topic/$aws/things/ConnectedSensor/*",
-          "arn:aws:iot:us-east-2:*:topic/things/ConnectedSensor/readings",
-          "arn:aws:iot:us-east-2:*:topic/things/ConnectedSensor/diagnostics"
-        ]
-      },
-      {
-        "Effect": "Allow",
-        "Action": [
-          "iot:Subscribe"
-        ],
-        "Resource": [
-          "arn:aws:iot:us-east-2:*:topicfilter/$aws/things/ConnectedSensor/shadow/*",
-          "arn:aws:iot:us-east-2:*:topicfilter/things/ConnectedSensor/readings",
-          "arn:aws:iot:us-east-2:*:topicfilter/things/ConnectedSensor/diagnostics"
-        ]
-      }
-    ]
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Action": [
+            "iot:Connect"
+          ],
+          "Resource": [
+            "arn:aws:iot:*:*:client/ConnectedSensor"
+          ]
+        },
+        {
+          "Effect": "Allow",
+          "Action": [
+            "iot:Publish",
+            "iot:Receive"
+          ],
+          "Resource": [
+            "arn:aws:iot:*:*:topic/$aws/*",
+            "arn:aws:iot:*:*:topic/*"
+          ]
+        },
+        {
+          "Effect": "Allow",
+          "Action": [
+            "iot:Subscribe"
+          ],
+          "Resource": [
+            "arn:aws:iot:*:*:topicfilter/$aws/*",
+            "arn:aws:iot:*:*:topicfilter/*"
+          ]
+        }
+      ]
     }
     ```
 1. Click on ‘Create’ to create the policy

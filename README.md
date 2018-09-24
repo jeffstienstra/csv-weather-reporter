@@ -28,8 +28,9 @@ detail in the following sections.
 1. Select ‘Manage' from the left hand navigation menu, and you should see a Thing called 'ConnectedSensor'
 1. Select 'ConnectedSensor', and you will see the details of the Thing. To save time, we've included a [configuration values file](configuration-values.md)
 that contains all of the values you will need to connect to this thing using the AWS IoT SDK. The SDK documentation will describe how to establish the connection programmatically using these values.
-1. The requirements specify two MQTT topics. Note that you do not need to do anything to create the topics in AWS IoT, topics are created dynamically by AWS when a client sends data to a new topic.
- 
+1. The requirements specify two MQTT topics: `things/ConnectedSensor/diagnostics` and `things/ConnectedSensor/readings`. Note that you do not need to do anything to create the topics in AWS IoT, topics are created dynamically by AWS when a client sends data to a new topic.
+
+
 
 ## Requirements
 
