@@ -4,8 +4,8 @@ in this repo, so these are correct assuming the top level of the repository. You
 with the SDK, but you will need the values to establish the connection. Each SDK has similar names for the parameters, but
 they may not match exactly.
 
-- Key Path   : `./certificates/c5e00cd317-private.pem.key`,
-- Certificate Path  : `./certificates/c5e00cd317-certificate.pem.crt`,
+- Key Path   : `./certificates/b3f2a9ad5f-private.pem.key`,
+- Certificate Path  : `./certificates/b3f2a9ad5f-certificate.pem.crt`,
 - CA Path    : `./certificates/VeriSign-Class-3-Public-Primary-Certification-Authority-G5.pem`,
 - Client Id  : `ConnectedSensor`,
 - Host       : `a2oqv2xg9kt66v.iot.us-east-1.amazonaws.com`,
