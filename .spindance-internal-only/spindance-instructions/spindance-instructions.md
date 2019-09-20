@@ -1,5 +1,9 @@
 # SpinDance Setup:
 
+## Prerequisites
+
+1. Setup github command line tool [hub](https://github.com/github/hub)
+
 ## Setup Challenger AWS Account (one time per account):
 
 ### Register a new Thing in the challenge account:
@@ -76,31 +80,15 @@
 1. Add them to the 'CodeChallengers' group
 1. Once the user is created, dowload the 'credentials.csv' file at the success screen and attach to the email in the next section
 
-### Send Candidate Email
-Send the challenger an email with a similar body/subject to establish timing of the challenge and provide AWS credentials
-
-```
-Subject: SpinDance Code Challenge: AWS Credentials and GitHub ID
-
-Hi <Candidate Name> - 
-
-We are getting setup for the code challenge. Today I’m sending you some AWS credentials to at least try and login with. I want to be sure we have that working before we proceed. Next, we need to know a ~3 day period that would work for you to start the challenge. I will suggest Friday 5pm to Monday 9am seems to be good for most folks since it gives plenty of time to complete, and still has flexibility with what you may already have planned. Does this time work for you? Is there a better time period?
-Attached is a CSV file containing the sign-in url, username, and password to sign in. You will be forced to reset your password on your first login. The CSV also contains the values for your Access Key ID and Secret Access Key. You should not need these for this particular challenge.
-
-We will also need to know your github ID. Please include that in the reply to this email. If you don't yet have an account, please sign up for a free account.
-
-Please let me know about timing of the challenge as well as confirm you can login with your AWS credentials
-
-Thank you,
-```
-
 ### Initiate the Challenge
 
 1. On the agreed time, copy this repository to a new repository with the candidates name appended:
     ```
-    git clone git@github.com:<user>/spindance.code-challenge
-    cd spindance.code-challenge
-    git remote set-url origin git@github.com:<user>/spindance.code-challenge.<candidate-id>
+    git clone git@github.com:spindance/spindance.code-challenge
+    cp -r spindance.code-challenge spindance.code-challenge.<candidate-id>
+    cd spindance.code-challenge.<candidate-id>
+    hub create spindance.code-challenge.<candidate-id>
+    git remote set-url origin git@github.com:spindance/spindance.code-challenge.<candidate-id>
     git push origin master
     ```
 1. Copy the internal files for the challenge account the candidate is using the following commands. 
@@ -119,10 +107,11 @@ This shows an example using data specific to the 'spindance-codechallenge2' acco
     ```
     git checkout master
     git add *
+    git add .spindance-internal-only/
     git commit -m "configure for <candidate-id>"
     git push master
     ```
-1. Send the following email to the candidate
+1. Attach the csv credentials file ans send the following email to the candidate
 
     ```
     Subject: SpinDance Code Challenge: Good Luck!
@@ -130,15 +119,20 @@ This shows an example using data specific to the 'spindance-codechallenge2' acco
     Hi <Candidate Name> - 
     
     We are excited to kick you off on the SpinDance code challenge. 
-    You will receive an email notification shortly from github with a link to the code challenge repository.
-    Read through the instructions and feel free to get started at any time. We ask that you complete your last commits
-    no later than <end date time>. Please let me know if you have any access issues, or need clarifications.
+
+    You will need access to Amazon Web Services (AWS) to complete the challenge. Attached is a CSV file containing the AWS sign-in url, username, and password. You will be forced to reset your password on your first login. The CSV also contains the values for your Access Key ID and Secret Access Key. You will not need these for this challenge. Please confirm you can log into the console and let us know if there are any issues as soon as possible.
+
+    You will receive an email notification shortly from github with a link to the code challenge repository.  Read through the instructions and feel free to get started at any time. We ask that you complete your last commits no later than <end date time>. Please let me know if you have any access issues, or need clarifications.
     
     
     Thank you,
     ```
  1. Give the candidate access via their provided github id (Have Bruce fill in details here)
- 
+
+   1. Navigate to the repository and select "Settings" 
+   1. Pick "Collaborators and teams"  
+   1. Under the "Collaborators" section, add the candidate's github id and select "Add collaborator"
+
  ### Cleanup 
  
  1. The candidate copy of the repo should be kept until a hiring decision has been made. Once this 
