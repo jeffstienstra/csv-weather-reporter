@@ -11,8 +11,8 @@ This is your private repo. This is where you will commit and push
  in mind we will test your application with various inputs, not just what is provided in this repository. 
 
 You will receive AWS login credentials for an AWS account that contains resources you will need to complete this task. 
-The account contains a pre-registered AWS IoT Thing called 'ConnectedSensor' that has been setup for you. This repository
-contains the keys, certificates, and configuration values needed to connect to the 'ConnectedSensor', described in more 
+The account contains a pre-registered AWS IoT Thing called '$DEVICE' that has been setup for you. This repository
+contains the keys, certificates, and configuration values needed to connect to the '$DEVICE', described in more 
 detail in the following sections. 
   
 
@@ -25,16 +25,16 @@ detail in the following sections.
 1. Login to the AWS console with your provided credentials. You may be prompted to reset your password on login.
 1. Be sure you select 'US East (N. Virginia)' for the region in the upper right corner of the console
 1. Under the 'Services' dropdown, navigate to ‘AWS IoT Core'. You may need to click 'Get Started' if you don't see the left hand navigation menu.
-1. Select ‘Manage' from the left hand navigation menu, and you should see a Thing called 'ConnectedSensor'
-1. Select 'ConnectedSensor', and you will see the details of the Thing. To save time, we've included a [configuration values file](configuration-values.md)
+1. Select ‘Manage' from the left hand navigation menu, and you should see a Thing called '$DEVICE'
+1. Select '$DEVICE', and you will see the details of the Thing. To save time, we've included a [configuration values file](configuration-values.md)
 that contains all of the values you will need to connect to this thing using the AWS IoT SDK. The SDK documentation will describe how to establish the connection programmatically using these values.
-1. The requirements specify two MQTT topics: `things/ConnectedSensor/diagnostics` and `things/ConnectedSensor/readings`. Note that you do not need to do anything to create the topics in AWS IoT, topics are created dynamically by AWS when a client sends data to a new topic.
+1. The requirements specify two MQTT topics: `things/$DEVICE/diagnostics` and `things/$DEVICE/readings`. Note that you do not need to do anything to create the topics in AWS IoT, topics are created dynamically by AWS when a client sends data to a new topic.
 
 
 
 ## Requirements
 
-1. Report readings to AWS IoT using the MQTT topic `things/ConnectedSensor/readings`. 
+1. Report readings to AWS IoT using the MQTT topic `things/$DEVICE/readings`. 
 1. Report each reading as a JSON structure:
     ```json
     {
@@ -54,7 +54,7 @@ that contains all of the values you will need to connect to this thing using the
     *The above example shows a few successive diagnostics reports D0-D3 generated over successive readings R0-R9*  
 
 1. Only generate diagnostics reports once enough readings have been accumulated to fill a sample size window.
-1. Compute and report diagnostic data using the MQTT topic `things/ConnectedSensor/diagnostics`
+1. Compute and report diagnostic data using the MQTT topic `things/$DEVICE/diagnostics`
 1. Diagnostics data shall include the min, max, and average values for a sample
 1. Diagnostics data shall include the latest timestamp of the readings used in the report and also be reported in a JSON structure:
    ```json
@@ -74,4 +74,4 @@ that contains all of the values you will need to connect to this thing using the
 
 ## End to End Test using AWS IoT Console
 1. In the AWS IoT Core console, select 'Test' in the left navigation list
-1. Input the topic to watch 'things/ConnectedSensor/readings’ or 'things/ConnectedSensor/diagnostics’, start your application and if everything is connected, you will see your data
+1. Input the topic to watch 'things/$DEVICE/readings’ or 'things/$DEVICE/diagnostics’, start your application and if everything is connected, you will see your data
