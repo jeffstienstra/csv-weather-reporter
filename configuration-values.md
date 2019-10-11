@@ -7,4 +7,4 @@ they may not match exactly.
 - Certificate Path  : `./certificates/$DEVICE.crt`,
 - CA Path    : `./certificates/AmazonRootCA1.pem`,
 - Client Id  : `$DEVICE`,
-- Host       : `2oqv2xg9kt66v-ats.iot.us-east-1.amazonaws.com`,
+- Host       : `a2oqv2xg9kt66v-ats.iot.us-east-1.amazonaws.com`,
