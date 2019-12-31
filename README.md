@@ -17,9 +17,11 @@ detail in the following sections.
   
 
 ## Instructions
-1. Create an application per the requirements specified below using one of the any of the available [AWS IoT SDKs](https://docs.aws.amazon.com/iot/latest/developerguide/iot-sdks.html) for the interface to AWS IoT.
+1. Create an application per the requirements specified below using one of the available [AWS IoT Device SDKs](https://docs.aws.amazon.com/iot/latest/developerguide/iot-sdks.html) for the interface to AWS IoT. These are available for C++, Arduino, Embedded C, Java, Javascript, and Python. There are Mobile SDKs for Android and iOS, but this challenge was not specifically designed for a mobile client, so we strongly suggest picking another language. If you are not familiar with any of these languages, please let us know so we can make recommendations on how to proceed.
 1. You should not need to configure anything further in AWS, those steps are done for you.
 1. Commit and push to this repository your source code, unit tests, and instructions for how to build, test, and run your application.
+1. Document assumptions you make during implementation in code comments. These will serve as points of discussion about your solution.
+
 
 ## Connecting to the AWS IoT Thing:
 1. Login to the AWS console with your provided credentials. You may be prompted to reset your password on login.
@@ -29,11 +31,14 @@ detail in the following sections.
 1. Select '$DEVICE', and you will see the details of the Thing. To save time, we've included a [configuration values file](configuration-values.md)
 that contains all of the values you will need to connect to this thing using the AWS IoT SDK. The SDK documentation will describe how to establish the connection programmatically using these values.
 1. The requirements specify two MQTT topics: `things/$DEVICE/diagnostics` and `things/$DEVICE/readings`. Note that you do not need to do anything to create the topics in AWS IoT, topics are created dynamically by AWS when a client sends data to a new topic.
+1. Prioritize a working algorithm over connectivity to AWS IoT. We would rather see a working algorithm with printouts to standard out than have a working AWS IoT connection without a working algorithm.
 
 
 
 ## Requirements
 
+
+1. Accept input readings defined in CSV file similar to the example [data file](data/readings.csv). One invocation of the tool will read and process a single csv file, there is no need to 'listen' for updates made to the file after invocation.
 1. Report readings to AWS IoT using the MQTT topic `things/$DEVICE/readings`. 
 1. Report each reading as a JSON structure:
     ```json
@@ -44,7 +49,6 @@ that contains all of the values you will need to connect to this thing using the
       "pressure": 37.11
     }
     ```
-1. Accept input readings defined in CSV file similar to the example [data file](data/readings.csv).
 1. Provide a user configurable way to set the filename to use as input.
 1. Provide a user configurable way to set the sample size window, which specifies the number of readings included in each diagnostics report. (Ex. last 4 readings).
 1. Provide a user configurable way to set the report interval, which specifies how often the report should be generated (Ex. every 2 readings)
