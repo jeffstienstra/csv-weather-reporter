@@ -3,7 +3,7 @@ Welcome to the SpinDance Weather Reporter!
 To get the app ready:
 
 1. In the terminal, navigate to the project's root folder and type
-   `nodemon app.js` to start running the local server.
+   `nodemon main.js` to start running the local server.
 
 2. Move your .csv file into the 'csvFiles' folder within this project.
 
