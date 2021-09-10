@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SpinDance Weather Reporter</title>
+  </head>
+
+  <body>
+    <h1>SpinDance Weather Reporter</h1>
+    <br />
+    <h3>How to process a set of raw weather samples:</h3>
+    <form method="POST" action="/" enctype="multipart/form-data">
+      <p>1. Place the .csv file to be processed into the 'csvFiles' folder.</p>
+      <br />
+      <p>2. Type the filename of that file (without the .csv extension).</p>
+      <div><input type="text" name="filename" placeholder="filename" /></div>
+      <br />
+      <p>3. Enter the Sample Size to include in each group report.</p>
+      (If left blank one report will be created for the entire file.)
+      <div><input id="sampeSize" type="text" name="sampleSize" placeholder="Must be > 0" /></div>
+      <br />
+      <p>4. Enter the Interval to offset before the next report is generated.</p>
+      (If left blank one report will be created for the entire file.)
+      <div><input id="interval" type="text" name="interval" placeholder="" /></div>
+      <br />
+      <input type="submit" value="Process CSV File" />
+    </form>
+  </body>
+</html>
+
+<style>
+  * {
+    text-align: center !important;
+    margin: auto !important;
+  }
+</style>
