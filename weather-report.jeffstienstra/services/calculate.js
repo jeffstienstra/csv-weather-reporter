@@ -26,6 +26,8 @@ function calculatedReadings(readings, sampleSize, interval) {
   }, []);
 }
 
+module.exports = calculatedReadings;
+
 /* Notes about the calculatedReadings function (this is mostly for my own reference):  
   The arguments: (readings, sampleSize, interval)
     'readings' - an array of all the raw weather sample objects from the .csv file
@@ -52,5 +54,3 @@ function calculatedReadings(readings, sampleSize, interval) {
   
 
 */
-
-module.exports = calculatedReadings;

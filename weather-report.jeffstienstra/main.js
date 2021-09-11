@@ -33,10 +33,6 @@ app.post("/", (req, res) => {
 
   // Test if user sampleSize and Intercal inputs are valid && > 0
   if (isNumeric(params.sampleSize) && isNumeric(params.interval)) {
-    console.log("is sampleSize numeric?", isNumeric(req.body.sampleSize));
-    console.log("is interval numeric?", isNumeric(req.body.interval));
-    console.log("user input is valid");
-
     /*  Assumptions in converting csv file to json:
         -does not take into account invalid readings that may not be numeric. 
         -some sensors default to specific numeric values when they fail, some may read NaN
@@ -44,21 +40,24 @@ app.post("/", (req, res) => {
           the bad data.
         -need to create error reporting when a file cannot be found (either due to typo or
           the file is not in the correct directory)
+          Could add logic to automatically remove '.csv' from the string if the user included it
     */
     const file = CSVtoJSON()
-      /* Could add logic to automatically remove '.csv' from the string if the user included it
-
-      */
       .fromFile(`./csvFiles/${params.filename}.csv`)
       .then((rawReadings) => {
         readings = rawReadings;
-        // console.log("readings", readings);
 
-        //
+        console.log("");
+        console.log(`Individual weather samples from '${params.filename}.csv' file`);
+        console.log(`Total readings: ${readings.length}`);
+        console.log(readings);
+        console.log("");
+        console.log("Sample Group Diagnostic Reports");
+        console.log(`Sample Size: ${params.sampleSize}, Interval: ${params.interval}`);
         console.log(
-          "calculatedReadings",
           calculatedReadings(readings, params.sampleSize || readings.length, params.interval || readings.length)
         );
+        console.log("");
       })
       .catch((err) => {
         console.log(err);
@@ -71,7 +70,7 @@ app.post("/", (req, res) => {
     );
     res.write("</html>");
     res.end();
-    console.log("Failed truthiness!");
+    console.log("Invalid user input. Must be whole numbers > 0.");
   }
 });
 

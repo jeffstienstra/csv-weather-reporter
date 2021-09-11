@@ -1,1 +1,1 @@
-// copy from main.js to separate functionality
+// intend to move app.post action from main.js to separate functionality
