@@ -27,6 +27,10 @@ class CalculatedReading {
       humidity, and kPa/PSI/inHg pressure, etc for the output report.
   */
 
+  /*  the '...' below is called the Rest Parameter and can be read as (the rest of [array]), 
+      which allows a function to take an unlimited number of arguments - aka a 'variadic function'.
+  */
+
   calculateMax(readingGroup, attr) {
     return Math.max(...readingGroup.map((reading) => parseFloat(reading[attr]))).toFixed(2);
   }
