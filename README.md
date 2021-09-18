@@ -1,4 +1,4 @@
-Welcome to the CSV Weather Reporter!
+~ Welcome to the CSV Weather Reporter, by Jeff Stienstra ~
 
 To get the app ready:
 
